@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import fr.unili.iut.SpaceInvaders.utils.HorsEspaceJeuException;
+import fr.unilim.iut.SpaceInvaders.model.SpaceInvaders;
 
 public class SpaceInvadersTest {
 	private SpaceInvaders spaceinvaders;
