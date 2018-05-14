@@ -164,6 +164,7 @@ public class SpaceInvadersTest {
 			"........VVV....\n" + 
 			"........VVV....\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 		}
+	 
 	 @Test
 		public void test_VaisseauImmobile_DeplacerVaisseauVersLaDroite() {
 			
