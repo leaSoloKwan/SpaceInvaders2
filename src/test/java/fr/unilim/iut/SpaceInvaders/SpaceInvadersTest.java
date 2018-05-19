@@ -6,11 +6,11 @@ import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
 
-import fr.unili.iut.SpaceInvaders.utils.DebordementEspaceJeuException;
-import fr.unili.iut.SpaceInvaders.utils.HorsEspaceJeuException;
 import fr.unilim.iut.SpaceInvaders.model.Dimension;
 import fr.unilim.iut.SpaceInvaders.model.Position;
 import fr.unilim.iut.SpaceInvaders.model.SpaceInvaders;
+import fr.unilim.iut.SpaceInvaders.utils.DebordementEspaceJeuException;
+import fr.unilim.iut.SpaceInvaders.utils.HorsEspaceJeuException;
 
 public class SpaceInvadersTest {
 	private SpaceInvaders spaceinvaders;

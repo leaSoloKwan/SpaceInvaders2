@@ -1,7 +1,7 @@
 package fr.unilim.iut.SpaceInvaders.model;
 
-import fr.unili.iut.SpaceInvaders.utils.DebordementEspaceJeuException;
-import fr.unili.iut.SpaceInvaders.utils.HorsEspaceJeuException;
+import fr.unilim.iut.SpaceInvaders.utils.DebordementEspaceJeuException;
+import fr.unilim.iut.SpaceInvaders.utils.HorsEspaceJeuException;
 
 public class SpaceInvaders {
 	private static final char MARQUE_FIN_LIGNE = '\n';
