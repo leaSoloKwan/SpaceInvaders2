@@ -140,6 +140,7 @@ public class SpaceInvadersTest {
 			}
 				
 		}
+	 
 	 @Test
 	    public void test_VaisseauAvance_DeplacerVaisseauVersLaDroite() {
 			
