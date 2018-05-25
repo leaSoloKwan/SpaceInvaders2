@@ -38,7 +38,9 @@ public class SpaceInvadersTest {
 	public void test_unNouveauVaisseauEstCorrectementPositionneDansEspaceJeu() {
 		
 
+
 		spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(1,1),new Position(7,9));
+
 		assertEquals("" + 
 		"...............\n" + 
 		"...............\n" +
@@ -60,7 +62,9 @@ public class SpaceInvadersTest {
 			
 			try {
 
+
 				spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(1,1),new Position(15,9));
+
 
 				fail("Position trop à droite : devrait déclencher une exception HorsEspaceJeuException");
 			} catch (final HorsEspaceJeuException e) {
@@ -69,7 +73,9 @@ public class SpaceInvadersTest {
 			
 			try {
 
+
 				spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(1,1),new Position(-1,9));
+
 
 				fail("Position trop à gauche : devrait déclencher une exception HorsEspaceJeuException");
 			} catch (final HorsEspaceJeuException e) {
@@ -78,7 +84,9 @@ public class SpaceInvadersTest {
 			
 			try {
 
+
 				spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(1,1),new Position(14,10));
+
 
 				fail("Position trop en bas : devrait déclencher une exception HorsEspaceJeuException");
 			} catch (final HorsEspaceJeuException e) {
@@ -86,6 +94,7 @@ public class SpaceInvadersTest {
 			
 			
 			try {
+
 
 				spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(1,1),new Position(14,-1));
 
@@ -97,8 +106,10 @@ public class SpaceInvadersTest {
 	 
 	 @Test
 
+
 		public void test_unNouveauVaisseauAvecDimensionEstCorrectementPositionneDansEspaceJeu() {
 		 spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3,2),new Position(7,9));
+
 
 			assertEquals("" + 
 			"...............\n" + 
@@ -132,7 +143,9 @@ public class SpaceInvadersTest {
 	 @Test
 	    public void test_VaisseauAvance_DeplacerVaisseauVersLaDroite() {
 			
+
 			spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3,2),new Position(7,9));
+
 			spaceinvaders.deplacerVaisseauVersLaDroite();
 			assertEquals("" + 
 			"...............\n" + 
@@ -167,7 +180,7 @@ public class SpaceInvadersTest {
 		}
 	 @Test
 		public void test_VaisseauAvance_DeplacerVaisseauVersLaGauche() {
-			
+
 
 			spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3,2),new Position(7,9));
 
@@ -188,6 +201,7 @@ public class SpaceInvadersTest {
 	 @Test
 		public void test_VaisseauImmobile_DeplacerVaisseauVersLaGauche() {
 
+
 			spaceinvaders.positionnerUnNouveauVaisseau(new Dimension(3,2),new Position(0,9));
 
 			spaceinvaders.deplacerVaisseauVersLaGauche();
@@ -204,6 +218,6 @@ public class SpaceInvadersTest {
 			"VVV............\n" + 
 			"VVV............\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 		}
-	
+
 }
 
