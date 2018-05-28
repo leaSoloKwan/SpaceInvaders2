@@ -2,6 +2,7 @@ package fr.unilim.iut.SpaceInvaders.model;
 
 import fr.unilim.iut.SpaceInvaders.utils.MissileException;
 
+
 public class Vaisseau extends Sprite {
     
     public Vaisseau(Dimension dimension, Position positionOrigine, int vitesse) {
