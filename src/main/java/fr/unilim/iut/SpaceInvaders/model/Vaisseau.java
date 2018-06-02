@@ -5,7 +5,7 @@ import fr.unilim.iut.SpaceInvaders.utils.MissileException;
 
 public class Vaisseau extends Sprite {
     
-    public Vaisseau(Dimension dimension, Position positionOrigine, int vitesse) {
+    public Vaisseau( Dimension dimension, Position positionOrigine, int vitesse) {
     	super(dimension,positionOrigine,vitesse);
 	}
    

@@ -297,7 +297,7 @@ public class SpaceInvadersTest {
 	       ".....VVVVVVV...\n" + 
 	       ".....VVVVVVV...\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	   }
-	  /*
+	  
 	  @Test
 	   public void test_MissileDisparait_QuandIlCommenceASortirDeEspaceJeu() {
 
@@ -321,7 +321,7 @@ public class SpaceInvadersTest {
 	       ".....VVVVVVV...\n" + 
 	       ".....VVVVVVV...\n" , spaceinvaders.recupererEspaceJeuDansChaineASCII());
 	   }
-	   */
+	   
 
 	 
 }
