@@ -12,6 +12,7 @@ public class SpaceInvaders implements Jeu {
 	int hauteur;
 	Vaisseau vaisseau;
 	 Missile missile;
+	 Envahisseur envahisseur;
 
 	public SpaceInvaders(int longueur, int hauteur) {
 		this.longueur = longueur;
@@ -46,7 +47,14 @@ public class SpaceInvaders implements Jeu {
 	private boolean aUnVaisseauQuiOccupeLaPosition(int x, int y) {
 		return this.aUnVaisseau() && vaisseau.occupeLaPosition(x, y);
 	}
-
+	private boolean aUnEnvahisseurQuiOccupeLaPosition(int x, int y) {
+		return this.aUnEnvahisseur() && envahisseur.occupeLaPosition(x, y);
+	}
+	
+	
+	public boolean aUnEnvahisseur() {
+		return envahisseur!=null;
+	}
 	public boolean aUnMissile() {
 		return missile != null;
 	}
@@ -60,6 +68,9 @@ public class SpaceInvaders implements Jeu {
 	}
 	public Missile recupererMissile() {
 		return this.missile;
+	}
+	public Envahisseur recupererEnvahisseur() {
+		return this.envahisseur;
 	}
 	private boolean estDansEspaceJeu(int x, int y) {
 		return ((x >= 0) && (x < longueur)) && ((y >= 0) && (y < hauteur));
@@ -100,10 +111,32 @@ public class SpaceInvaders implements Jeu {
 
 		 vaisseau = new Vaisseau(dimension,position,vitesse);
 	}
+public void positionnerUnNouveauEnvahisseur(Dimension dimension, Position position, int vitesse) {
+		
+		int x = position.abscisse();
+		int y = position.ordonnee();
+		
+		if (!estDansEspaceJeu(x, y))
+			throw new HorsEspaceJeuException("La position de l'envahisseur est en dehors de l'espace jeu");
+
+		int longueurEnvahisseur = dimension.longueur();
+		int hauteurEnvahisseur = dimension.hauteur();
+		
+		if (!estDansEspaceJeu(x + longueurEnvahisseur - 1, y))
+			throw new DebordementEspaceJeuException("Le vaisseau déborde de l'espace jeu vers la droite à cause de sa longueur");
+		if (!estDansEspaceJeu(x, y - hauteurEnvahisseur + 1))
+			throw new DebordementEspaceJeuException("Le vaisseau déborde de l'espace jeu vers le bas à cause de sa hauteur");
+
+		 envahisseur = new Envahisseur(dimension,position,vitesse);
+	}
+	
 	public void initialiserJeu() {
 		Position positionVaisseau = new Position(this.longueur/2,this.hauteur-1);
 		Dimension dimensionVaisseau = new Dimension(Constante.VAISSEAU_LONGUEUR, Constante.VAISSEAU_HAUTEUR);
 		positionnerUnNouveauVaisseau(dimensionVaisseau, positionVaisseau, Constante.VAISSEAU_VITESSE);
+		Position positionEnvahisseur=new Position(this.longueur/3,this.hauteur/2);
+		Dimension dimensionEnvahisseur=new Dimension(Constante.ENVAHISSEUR_LONGUEUR,Constante.ENVAHISSEUR_HAUTEUR);
+		positionnerUnNouveauEnvahisseur(dimensionEnvahisseur,positionEnvahisseur,Constante.ENVAHISSEUR_VITESSE);
 	 }
 	
 	 @Override
