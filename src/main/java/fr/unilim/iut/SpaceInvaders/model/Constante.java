@@ -12,8 +12,8 @@ public class Constante {
     public static final int VAISSEAU_HAUTEUR = 20;
     public static final int VAISSEAU_VITESSE = 4;
     
-    public static final int ENVAHISSEUR_LONGUEUR = 30;
-    public static final int ENVAHISSEUR_HAUTEUR = 20;
+    public static final int ENVAHISSEUR_LONGUEUR = 15;
+    public static final int ENVAHISSEUR_HAUTEUR = 10;
     public static final int ENVAHISSEUR_VITESSE = 4;
     
 	public static final char MARQUE_FIN_LIGNE = '\n';

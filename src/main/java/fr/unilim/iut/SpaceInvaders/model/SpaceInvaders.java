@@ -84,7 +84,25 @@ public class SpaceInvaders implements Jeu {
 			}
 		}
 	}
+	public void deplacerEnvahisseurVersLaDroite() {
+		if (envahisseur.abscisseLaPlusADroite() < (longueur - 1)) {
+			envahisseur.deplacerHorizontalementVers(Direction.DROITE);
+			if (!estDansEspaceJeu(envahisseur.abscisseLaPlusADroite(), envahisseur.ordonneeLaPlusHaute())) {
+				envahisseur.positionner(longueur - envahisseur.longueur(), envahisseur.ordonneeLaPlusHaute());
+			}
+		}else {
+			this.envahisseur.changerDeplacement(false);
+		}
+	}
 
+	public void deplacerEnvahisseurVersLaGauche() {
+		if (0 < envahisseur.abscisseLaPlusAGauche())
+			envahisseur.deplacerHorizontalementVers(Direction.GAUCHE);
+		if (!estDansEspaceJeu(envahisseur.abscisseLaPlusAGauche(), envahisseur.ordonneeLaPlusHaute())) {
+			envahisseur.positionner(0, envahisseur.ordonneeLaPlusHaute());
+			envahisseur.changerDeplacement(true);
+		}
+	}
 	public void deplacerVaisseauVersLaGauche() {
 		if (0 < vaisseau.abscisseLaPlusAGauche())
 			vaisseau.deplacerHorizontalementVers(Direction.GAUCHE);
@@ -134,7 +152,7 @@ public void positionnerUnNouveauEnvahisseur(Dimension dimension, Position positi
 		Position positionVaisseau = new Position(this.longueur/2,this.hauteur-1);
 		Dimension dimensionVaisseau = new Dimension(Constante.VAISSEAU_LONGUEUR, Constante.VAISSEAU_HAUTEUR);
 		positionnerUnNouveauVaisseau(dimensionVaisseau, positionVaisseau, Constante.VAISSEAU_VITESSE);
-		Position positionEnvahisseur=new Position(this.longueur/3,this.hauteur/2);
+		Position positionEnvahisseur=new Position(this.longueur/3,this.hauteur/3);
 		Dimension dimensionEnvahisseur=new Dimension(Constante.ENVAHISSEUR_LONGUEUR,Constante.ENVAHISSEUR_HAUTEUR);
 		positionnerUnNouveauEnvahisseur(dimensionEnvahisseur,positionEnvahisseur,Constante.ENVAHISSEUR_VITESSE);
 	 }
@@ -156,6 +174,15 @@ public void positionnerUnNouveauEnvahisseur(Dimension dimension, Position positi
         if(this.aUnMissile()) {
         	this.deplacerMissile();
         }
+        if(this.aUnEnvahisseur()) {
+        	if(this.envahisseur.getDeplacement()==true) {
+        		this.deplacerEnvahisseurVersLaDroite();
+        	}else {
+        		this.deplacerEnvahisseurVersLaGauche();
+        	}
+        
+        }
+        
       }
 
   
